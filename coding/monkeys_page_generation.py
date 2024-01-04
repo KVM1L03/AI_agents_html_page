@@ -1,0 +1,87 @@
+# filename: monkeys_page_generation.py
+
+# Step 1: Import necessary libraries
+import urllib.request
+import webbrowser
+
+# Step 2: Define the HTML, CSS, and JavaScript code
+html_code = '''
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monkeys Page</title>
+    <style>
+        /* CSS code for navigation bar */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        ul.navbar li {
+            float: left;
+        }
+        
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        ul.navbar li a:hover {
+            background-color: #111;
+        }
+        
+        /* CSS code for images */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D" alt="Monkey 1" onclick="showAlert('Monkey 1')">
+        <img src="https://images.unsplash.com/photo-1463852247062-1bbca38f7805?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D" alt="Monkey 2" onclick="showAlert('Monkey 2')">
+        <img src="https://images.unsplash.com/photo-1570288685280-7802a8f8c4fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D%3D" alt="Monkey 3" onclick="showAlert('Monkey 3')">
+    </div>
+    
+    <script>
+        // JavaScript code to display alert when image is clicked
+        function showAlert(monkeyName) {
+            alert("You clicked on " + monkeyName);
+        }
+    </script>
+</body>
+</html>
+'''
+
+# Step 3: Save the HTML code to a file
+with open('monkeys_page.html', 'w') as file:
+    file.write(html_code)
+
+# Step 4: Open the generated HTML file in a web browser
+webbrowser.open('monkeys_page.html')
+
+# Step 5: Print the path of the generated HTML file
+print("The monkeys page has been generated and opened in a web browser.")
+
+# Step 6: TERMINATE
